@@ -1,0 +1,211 @@
+@body-bg: #fafafa;
+@primaryColor: #3056e3;
+@light-border: 1px solid #d9d9d9;
+@hToolbarHeight: 40px;
+@vToolbarWidth: 40px;
+
+.dag-solution {
+  .__dumi-default-previewer-actions {
+    border: 0;
+  }
+}
+
+.dag-user-custom-clz {
+  position: relative;
+  //height: 610px;
+  border: @light-border;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  .xflow-x6-canvas {
+    background: @body-bg;
+  }
+  .x6-edge {
+    &:hover {
+      path:nth-child(2) {
+        stroke: @primaryColor;
+        stroke-width: 2px;
+      }
+    }
+    &.x6-edge-selected {
+      path:nth-child(2) {
+        stroke: @primaryColor;
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  .xflow-node-dnd-panel-node-wrapper {
+    .xflow-algo-node {
+      width: 180px;
+    }
+  }
+  .xflow-canvas-dnd-node-tree {
+    border-right: @light-border;
+  }
+
+  .xflow-workspace-toolbar-top {
+    background-image: ~'linear-gradient(180deg, #ffffff 0%, #fafafa 100%)';
+    border-bottom: @light-border;
+  }
+
+  .xflow-workspace-toolbar-bottom {
+    text-align: center;
+    background: #fff;
+    border-top: @light-border;
+  }
+
+  .xflow-modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .xflow-collapse-panel {
+    .xflow-collapse-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      background: #f7f8fa;
+      .ant-input-affix-wrapper {
+        padding: 2px 11px;
+      }
+    }
+    .xflow-collapse-panel-body {
+      background: #f7f8fa;
+      .xflow-collapse-header {
+        padding: 12px 8px 4px 8px;
+      }
+      .xflow-collapse-content {
+        display: grid;
+        grid-template-rows: repeat(auto-fill, 100px);
+        grid-template-columns: repeat(auto-fill, 120px);
+        justify-content: center;
+        padding: 8px 0;
+        .xflow-collapse-content-item {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .xflow-collapse-panel-node-wrapper {
+            cursor: move;
+          }
+          &:hover {
+            background: fade(color(@primaryColor), 10%);
+            box-shadow: 0 0 0 1px fade(color(@primaryColor), 40%);
+          }
+        }
+      }
+    }
+    .xflow-node-dnd-panel-footer {
+      display: none;
+    }
+    ::-webkit-scrollbar-thumb {
+      /* 滑块 */
+      border: 4px solid #f7f8fa !important;
+    }
+  }
+
+  .horizontal.xflow-toolbar {
+    height: @hToolbarHeight;
+    .horizontal.xflow-toolbar-root {
+      .x6-toolbar {
+        height: @hToolbarHeight !important;
+        line-height: @hToolbarHeight !important;
+        .x6-toolbar-item-icon {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .vertical.xflow-toolbar {
+    width: @vToolbarWidth;
+    .vertical.xflow-toolbar-root {
+      .x6-toolbar {
+        width: @vToolbarWidth !important;
+        .x6-toolbar-item-icon {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .xflow-json-schema-form.xflow-workspace-panel {
+    .tabs .ant-tabs-nav .ant-tabs-nav-list {
+      width: unset;
+    }
+    .ant-tabs-tab {
+      font-size: 14px !important;
+    }
+    .ant-tabs-card > .ant-tabs-nav .ant-tabs-ink-bar {
+      visibility: visible;
+    }
+    .xflow-json-form label {
+      display: flex;
+      align-items: center;
+      font-size: 14px !important;
+      line-height: 80px;
+    }
+    .ant-form-item-label > label > .anticon {
+      font-size: 16px;
+    }
+    .ant-form-item .ant-input {
+      padding: 4px 11px !important;
+    }
+    .tabs.xTab .ant-tabs-nav .ant-tabs-nav-list {
+      border: none;
+    }
+    .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+      border: none;
+    }
+    .ant-tabs-top > .ant-tabs-nav::before {
+      border: none !important;
+    }
+  }
+
+}
+
+#container {
+  display: flex;
+  border: 1px solid #dfe3e8;
+}
+#stencil {
+  width: 180px;
+  height: 100%;
+  position: relative;
+  border-right: 1px solid #dfe3e8;
+}
+#graph-container {
+  width: calc(100% - 180px);
+  height: 100%;
+}
+
+.x6-widget-transform {
+  margin: -1px 0 0 -1px;
+  padding: 0px;
+  border: 1px solid #239edd;
+}
+.x6-widget-transform > div {
+  border: 1px solid #239edd;
+}
+.x6-widget-transform > div:hover {
+  background-color: #3dafe4;
+}
+.x6-widget-transform-active-handle {
+  background-color: #3dafe4;
+}
+.x6-widget-transform-resize {
+  border-radius: 0;
+}
+.x6-widget-selection-inner {
+  border: 1px solid #239edd;
+}
+.x6-widget-selection-box {
+  opacity: 0;
+}
+
+.xflow-canvas-root,.x6-panel-position-change-transition {
+  transition: left 0.5s;
+}
